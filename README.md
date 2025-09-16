@@ -3,7 +3,7 @@ Chào mừng bạn đến với ứng dụng TikTok App thử nghiệm.
 Đây là ứng dụng thử nghiệm để tích hợp TikTok API và Make
 
 ## Các trang quan trọng
-- [Add TikTok Verification file](https://aimgrandvn-blip.github.io/my-tiktok-app/tiktok-developers-site-verification=1cOsGdWyeh4Hu1tReczZr3JOSXWG3kLd.html)
+- [Verify site for TikTok app](https://aimgrandvn-blip.github.io/my-tiktok-app/tiktokCuTdwLxwQF6okNeeP8E9ROer30FowPB0.html)
 - [Terms of Service](https://aimgrandvn-blip.github.io/my-tiktok-app/terms.html)  
 - [Privacy Policy](https://aimgrandvn-blip.github.io/my-tiktok-app/privacy.html)  
 
