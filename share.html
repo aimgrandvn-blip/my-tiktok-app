@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Demo Share to TikTok</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; padding: 50px; }
+        button { padding: 15px 30px; font-size: 18px; cursor: pointer; background-color: #000; color: #fff; border: none; border-radius: 5px; margin: 10px; }
+        #result { margin-top: 20px; padding: 20px; background-color: #f0f0f0; border-radius: 5px; display: none; }
+    </style>
+</head>
+<body>
+
+    <h1>Demo App - Share to TikTok</h1>
+    <p>This is a simulation for TikTok Share Kit review.</p>
+
+    <!-- Nút giả lập quá trình "Tạo nội dung" và "Share" -->
+    <button onclick="simulateContentCreation()">🎬 Create Video</button>
+    <button onclick="simulateShareToTikTok()" id="shareButton" disabled>Share to TikTok</button>
+
+    <!-- Khu vực hiển thị kết quả giả lập -->
+    <div id="result">
+        <h3>✅ Share Simulation Successful!</h3>
+        <p>Video content was successfully shared to TikTok Sandbox Environment.</p>
+        <p>The video would now appear as a <strong>Draft</strong> in the TikTok app.</p>
+    </div>
+
+    <script>
+        // Hàm giả lập việc tạo video xong, kích hoạt nút Share
+        function simulateContentCreation() {
+            alert("Video content created successfully in the app!");
+            document.getElementById("shareButton").disabled = false;
+        }
+
+        // Hàm giả lập quá trình chia sẻ sang TikTok
+        function simulateShareToTikTok() {
+            alert("Redirecting to TikTok Sandbox... (Share Kit Simulation)");
+            // Giả lập quá trình xử lý và chuyển hướng
+            setTimeout(function() {
+                // Giả lập thành công, hiển thị kết quả
+                document.getElementById('result').style.display = 'block';
+            }, 2000);
+        }
+    </script>
+
+</body>
+</html>
