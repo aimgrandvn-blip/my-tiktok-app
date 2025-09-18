@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Demo App</title>
+    <!-- Đây là Script SDK của TikTok, bạn HOÀN TOÀN có thể nhúng nó vào mà không cần app được duyệt để test trên Sandbox -->
+    <script src="https://www.tiktok.com/embed.js"></script>
+</head>
+<body>
+    <h1>Demo App for TikTok Review</h1>
+    <!-- Nút Login giả lập - Khi nhấn sẽ hiện popup -->
+    <button onclick="demoLogin()">Login with TikTok (Sandbox)</button>
+    <br><br>
+    <!-- Khu vực hiển thị kết quả sau khi "đăng nhập" -->
+    <div id="user-info" style="display:none;">
+        <p>Login Successful! (Sandbox Mode)</p>
+        <p>User: TikTok User (Sandbox)</p>
+    </div>
+
+    <script>
+    // Hàm giả lập quá trình đăng nhập
+    function demoLogin() {
+        // Giả lập hiện popup ủy quyền... sau 2 giây thì giả lập thành công
+        alert("Redirecting to TikTok Sandbox Authorization...");
+        setTimeout(function() {
+            // Giả lập thành công, hiển thị kết quả
+            document.getElementById('user-info').style.display = 'block';
+        }, 2000);
+    }
+    </script>
+</body>
+</html>
