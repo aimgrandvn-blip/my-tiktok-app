@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>TikTok OAuth Callback</title>
+</head>
+<body>
+  <h2>Đang lấy Authorization Code...</h2>
+  <pre id="output"></pre>
+
+  <script>
+    // Lấy query string từ URL
+    const params = new URLSearchParams(window.location.search);
+    const code = params.get("code");
+    const state = params.get("state");
+
+    if (code) {
+      document.getElementById("output").innerText =
+        "Authorization Code: " + code + "\nState: " + state;
+
+      // 👉 Nếu muốn tự động gửi code về server/Make:
+      // fetch("https://webhook.make.com/xxxxxx", {
+      //   method: "POST",
+      //   headers: { "Content-Type": "application/json" },
+      //   body: JSON.stringify({ code, state })
+      // });
+    } else {
+      document.getElementById("output").innerText = "Không có code trong URL!";
+    }
+  </script>
+</body>
+</html>
