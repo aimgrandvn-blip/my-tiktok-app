@@ -1,101 +1,90 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Demo Share to TikTok</title>
-    <meta charset="utf-8" />
+    <title>Demo Share to TikTok (Simple + Full)</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            padding: 50px;
-            background: #f9f9f9;
-            color: #333;
-        }
-        h1 {
-            color: #111;
-        }
-        button {
-            padding: 12px 24px;
-            font-size: 16px;
-            cursor: pointer;
-            border: none;
-            border-radius: 8px;
-            margin: 10px;
-            transition: 0.2s;
-        }
-        .create-btn {
-            background-color: #25F4EE;
-            color: #111;
-        }
-        .create-btn:hover {
-            background-color: #20d8d0;
-        }
-        .share-btn {
-            background-color: #000;
-            color: #fff;
-        }
-        .share-btn:disabled {
-            background-color: #777;
-            cursor: not-allowed;
-        }
-        #result {
-            margin-top: 30px;
-            padding: 20px;
-            border: 2px solid #25F4EE;
-            border-radius: 12px;
-            background: #fff;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-            display: none;
-            text-align: left;
-            max-width: 500px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        #result p {
-            margin: 8px 0;
-            font-size: 16px;
-        }
-        .highlight {
-            font-weight: bold;
-            color: #25F4EE;
-            font-size: 17px;
-        }
+        body { font-family: Arial, sans-serif; text-align: center; padding: 40px; }
+        h1 { margin-bottom: 10px; }
+        button { padding: 12px 25px; font-size: 16px; cursor: pointer; background-color: #000; color: #fff; border: none; border-radius: 5px; margin: 10px; }
+        .mode-switch { margin: 20px; }
+        #resultSimple, #resultFull { display: none; margin-top: 20px; padding: 20px; border-radius: 5px; background-color: #f0f0f0; text-align: left; }
+        #videoPreview { width: 200px; margin-top: 10px; border-radius: 5px; display: none; }
     </style>
 </head>
 <body>
 
     <h1>Demo App - Share to TikTok</h1>
-    <p>This is a simulation for TikTok <strong>Share Kit</strong> review.</p>
+    <p>Select a mode below to simulate TikTok Share Kit.</p>
 
-    <!-- Nút giả lập quá trình "Tạo nội dung" và "Share" -->
-    <button onclick="simulateContentCreation()" class="create-btn">🎬 Create Video</button>
-    <button onclick="simulateShareToTikTok()" id="shareButton" class="share-btn" disabled>📤 Share to TikTok</button>
+    <!-- Nút chọn chế độ -->
+    <div class="mode-switch">
+        <button onclick="switchMode('simple')">🔹 Simple Mode</button>
+        <button onclick="switchMode('full')">🔸 Full Mode</button>
+    </div>
 
-    <!-- Khu vực hiển thị kết quả giả lập -->
-    <div id="result">
-        <h3>✅ Share Simulation Successful!</h3>
-        <p><b>Video Title:</b> <span class="highlight" id="videoTitle"></span></p>
-        <p><b>Status:</b> <span class="highlight">Draft</span></p>
-        <p><b>Video ID:</b> <span class="highlight" id="videoId"></span></p>
-        <p>Your video has been uploaded to the TikTok Sandbox Environment and saved as a <b>Draft</b>.</p>
+    <!-- SIMPLE MODE -->
+    <div id="simpleMode" style="display:none;">
+        <h2>Simple Mode</h2>
+        <button onclick="simulateSimpleCreate()">🎬 Create Video</button>
+        <button onclick="simulateSimpleShare()" id="simpleShareBtn" disabled>Share to TikTok</button>
+
+        <div id="resultSimple">
+            <h3>✅ Share Successful (Simple Mode)</h3>
+            <p>Video was shared to TikTok Sandbox.</p>
+            <p>Status: <strong>Draft</strong></p>
+        </div>
+    </div>
+
+    <!-- FULL MODE -->
+    <div id="fullMode" style="display:none;">
+        <h2>Full Mode</h2>
+        <button onclick="simulateFullCreate()">🎬 Create Video</button>
+        <button onclick="simulateFullShare()" id="fullShareBtn" disabled>Share to TikTok</button>
+
+        <div id="resultFull">
+            <h3>✅ Share Successful (Full Mode)</h3>
+            <p><strong>Video ID:</strong> demo_video_001</p>
+            <p><strong>Caption:</strong> "My First TikTok Sandbox Upload 🚀"</p>
+            <p><strong>Status:</strong> Draft</p>
+            <video id="videoPreview" controls>
+                <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                Your browser does not support video preview.
+            </video>
+        </div>
     </div>
 
     <script>
-        // Giả lập việc tạo video
-        function simulateContentCreation() {
-            alert("🎬 Video content created successfully in the app!");
-            document.getElementById("shareButton").disabled = false;
-            // Gán dữ liệu giả lập video
-            document.getElementById("videoTitle").textContent = "My Sandbox Demo Video";
-            document.getElementById("videoId").textContent = "vid_" + Math.floor(Math.random() * 100000);
+        // Chuyển mode hiển thị
+        function switchMode(mode) {
+            document.getElementById("simpleMode").style.display = "none";
+            document.getElementById("fullMode").style.display = "none";
+            if (mode === "simple") document.getElementById("simpleMode").style.display = "block";
+            if (mode === "full") document.getElementById("fullMode").style.display = "block";
         }
 
-        // Giả lập chia sẻ video sang TikTok
-        function simulateShareToTikTok() {
-            alert("Redirecting to TikTok Sandbox... (Share Kit Simulation)");
+        // SIMPLE MODE
+        function simulateSimpleCreate() {
+            alert("Video created successfully (Simple Mode).");
+            document.getElementById("simpleShareBtn").disabled = false;
+        }
+        function simulateSimpleShare() {
+            alert("Redirecting to TikTok Sandbox... (Simple Mode)");
             setTimeout(function() {
-                document.getElementById('result').style.display = 'block';
+                document.getElementById("resultSimple").style.display = "block";
             }, 1500);
+        }
+
+        // FULL MODE
+        function simulateFullCreate() {
+            alert("Video created successfully (Full Mode).");
+            document.getElementById("fullShareBtn").disabled = false;
+        }
+        function simulateFullShare() {
+            alert("Redirecting to TikTok Sandbox... (Full Mode)");
+            setTimeout(function() {
+                document.getElementById("resultFull").style.display = "block";
+                document.getElementById("videoPreview").style.display = "block";
+            }, 2000);
         }
     </script>
 
