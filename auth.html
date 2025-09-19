@@ -1,31 +1,30 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>TikTok OAuth Callback</title>
+  <meta charset="UTF-8">
+  <title>TikTok Auth Callback</title>
 </head>
 <body>
-  <h2>Đang lấy Authorization Code...</h2>
-  <pre id="output"></pre>
+  <h1>TikTok Auth Callback (Sandbox Demo)</h1>
+  <p id="result">Waiting for TikTok redirect...</p>
 
   <script>
-    // Lấy query string từ URL
-    const params = new URLSearchParams(window.location.search);
-    const code = params.get("code");
-    const state = params.get("state");
+    // Hàm lấy query string từ URL
+    function getQueryParam(name) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(name);
+    }
+
+    // Lấy code và state từ URL
+    const code = getQueryParam("code");
+    const state = getQueryParam("state");
 
     if (code) {
-      document.getElementById("output").innerText =
-        "Authorization Code: " + code + "\nState: " + state;
-
-      // 👉 Nếu muốn tự động gửi code về server/Make:
-      // fetch("https://webhook.make.com/xxxxxx", {
-      //   method: "POST",
-      //   headers: { "Content-Type": "application/json" },
-      //   body: JSON.stringify({ code, state })
-      // });
+      document.getElementById("result").innerText =
+        "Authorization successful!\nCode: " + code + "\nState: " + state;
     } else {
-      document.getElementById("output").innerText = "Không có code trong URL!";
+      document.getElementById("result").innerText =
+        "No authorization code found in URL.";
     }
   </script>
 </body>
