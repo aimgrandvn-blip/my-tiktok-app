@@ -2,43 +2,100 @@
 <html>
 <head>
     <title>Demo Share to TikTok</title>
+    <meta charset="utf-8" />
     <style>
-        body { font-family: Arial, sans-serif; text-align: center; padding: 50px; }
-        button { padding: 15px 30px; font-size: 18px; cursor: pointer; background-color: #000; color: #fff; border: none; border-radius: 5px; margin: 10px; }
-        #result { margin-top: 20px; padding: 20px; background-color: #f0f0f0; border-radius: 5px; display: none; }
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            background: #f9f9f9;
+            color: #333;
+        }
+        h1 {
+            color: #111;
+        }
+        button {
+            padding: 12px 24px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 8px;
+            margin: 10px;
+            transition: 0.2s;
+        }
+        .create-btn {
+            background-color: #25F4EE;
+            color: #111;
+        }
+        .create-btn:hover {
+            background-color: #20d8d0;
+        }
+        .share-btn {
+            background-color: #000;
+            color: #fff;
+        }
+        .share-btn:disabled {
+            background-color: #777;
+            cursor: not-allowed;
+        }
+        #result {
+            margin-top: 30px;
+            padding: 20px;
+            border: 2px solid #25F4EE;
+            border-radius: 12px;
+            background: #fff;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            display: none;
+            text-align: left;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        #result p {
+            margin: 8px 0;
+            font-size: 16px;
+        }
+        .highlight {
+            font-weight: bold;
+            color: #25F4EE;
+            font-size: 17px;
+        }
     </style>
 </head>
 <body>
 
     <h1>Demo App - Share to TikTok</h1>
-    <p>This is a simulation for TikTok Share Kit review.</p>
+    <p>This is a simulation for TikTok <strong>Share Kit</strong> review.</p>
 
     <!-- Nút giả lập quá trình "Tạo nội dung" và "Share" -->
-    <button onclick="simulateContentCreation()">🎬 Create Video</button>
-    <button onclick="simulateShareToTikTok()" id="shareButton" disabled>Share to TikTok</button>
+    <button onclick="simulateContentCreation()" class="create-btn">🎬 Create Video</button>
+    <button onclick="simulateShareToTikTok()" id="shareButton" class="share-btn" disabled>📤 Share to TikTok</button>
 
     <!-- Khu vực hiển thị kết quả giả lập -->
     <div id="result">
         <h3>✅ Share Simulation Successful!</h3>
-        <p>Video content was successfully shared to TikTok Sandbox Environment.</p>
-        <p>The video would now appear as a <strong>Draft</strong> in the TikTok app.</p>
+        <p><b>Video Title:</b> <span class="highlight" id="videoTitle"></span></p>
+        <p><b>Status:</b> <span class="highlight">Draft</span></p>
+        <p><b>Video ID:</b> <span class="highlight" id="videoId"></span></p>
+        <p>Your video has been uploaded to the TikTok Sandbox Environment and saved as a <b>Draft</b>.</p>
     </div>
 
     <script>
-        // Hàm giả lập việc tạo video xong, kích hoạt nút Share
+        // Giả lập việc tạo video
         function simulateContentCreation() {
-            alert("Video content created successfully in the app!");
+            alert("🎬 Video content created successfully in the app!");
             document.getElementById("shareButton").disabled = false;
+            // Gán dữ liệu giả lập video
+            document.getElementById("videoTitle").textContent = "My Sandbox Demo Video";
+            document.getElementById("videoId").textContent = "vid_" + Math.floor(Math.random() * 100000);
         }
 
-        // Hàm giả lập quá trình chia sẻ sang TikTok
+        // Giả lập chia sẻ video sang TikTok
         function simulateShareToTikTok() {
             alert("Redirecting to TikTok Sandbox... (Share Kit Simulation)");
-            // Giả lập quá trình xử lý và chuyển hướng
             setTimeout(function() {
-                // Giả lập thành công, hiển thị kết quả
                 document.getElementById('result').style.display = 'block';
-            }, 2000);
+            }, 1500);
         }
     </script>
 
