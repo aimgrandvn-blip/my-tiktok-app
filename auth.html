@@ -2,30 +2,372 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>TikTok Auth Callback</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>URBAN ARC.,JSC | Urban Architecture Joint Stock Company</title>
+
+  <meta
+    name="description"
+    content="Official website of Urban Architecture Joint Stock Company (URBAN ARC.,JSC), Hanoi, Vietnam."
+  >
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f5f7fa;
+      color: #222;
+      line-height: 1.65;
+    }
+
+    header {
+      background: #17233c;
+      color: white;
+      padding: 22px 8%;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 28px;
+    }
+
+    header p {
+      margin: 5px 0 0;
+      opacity: 0.9;
+    }
+
+    nav {
+      margin-top: 15px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-right: 20px;
+      font-size: 14px;
+    }
+
+    .hero {
+      background: white;
+      padding: 70px 8%;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .hero h2 {
+      font-size: 36px;
+      margin-bottom: 15px;
+      color: #17233c;
+    }
+
+    .hero p {
+      max-width: 850px;
+      font-size: 18px;
+    }
+
+    section {
+      background: white;
+      margin: 20px auto;
+      padding: 35px;
+      width: 84%;
+      max-width: 1100px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    h2 {
+      color: #17233c;
+    }
+
+    .company-info {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 8px 20px;
+    }
+
+    .label {
+      font-weight: bold;
+    }
+
+    .notice {
+      background: #f0f5ff;
+      border-left: 4px solid #315b9d;
+      padding: 18px;
+      margin-top: 20px;
+    }
+
+    .callback-box {
+      display: none;
+      background: #f7f7f7;
+      border: 1px solid #ddd;
+      padding: 20px;
+      margin-top: 25px;
+      border-radius: 6px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 15px;
+      background: #17233c;
+      color: white;
+      margin-top: 30px;
+      font-size: 14px;
+    }
+
+    @media (max-width: 700px) {
+      .company-info {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h2 {
+        font-size: 28px;
+      }
+
+      section {
+        width: 94%;
+        padding: 24px;
+      }
+    }
+  </style>
 </head>
+
 <body>
-  <h1>TikTok Auth Callback (Sandbox Demo)</h1>
-  <p id="result">Waiting for TikTok redirect...</p>
 
-  <script>
-    // Hàm lấy query string từ URL
-    function getQueryParam(name) {
-      const urlParams = new URLSearchParams(window.location.search);
-      return urlParams.get(name);
-    }
+<header>
+  <h1>URBAN ARC.,JSC</h1>
+  <p>Urban Architecture Joint Stock Company</p>
 
-    // Lấy code và state từ URL
-    const code = getQueryParam("code");
-    const state = getQueryParam("state");
+  <nav>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#digital">Digital Solutions</a>
+    <a href="#privacy">Privacy</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
 
-    if (code) {
-      document.getElementById("result").innerText =
-        "Authorization successful!\nCode: " + code + "\nState: " + state;
-    } else {
-      document.getElementById("result").innerText =
-        "No authorization code found in URL.";
-    }
-  </script>
+
+<div class="hero">
+  <h2>Urban Architecture Joint Stock Company</h2>
+
+  <p>
+    URBAN ARC.,JSC is a Vietnam-based company providing architecture,
+    business development and technology-enabled solutions for enterprises
+    and communities.
+  </p>
+
+  <p>
+    We develop and apply digital technologies to improve business operations,
+    customer communication, content management and service delivery.
+  </p>
+</div>
+
+
+<section id="about">
+  <h2>Company Information</h2>
+
+  <div class="company-info">
+
+    <div class="label">Legal company name:</div>
+    <div>CÔNG TY CỔ PHẦN KIẾN TRÚC ĐÔ THỊ</div>
+
+    <div class="label">English name:</div>
+    <div>URBAN ARCHITECTURE JOINT STOCK COMPANY</div>
+
+    <div class="label">Abbreviated name:</div>
+    <div>URBAN ARC.,JSC</div>
+
+    <div class="label">Enterprise registration number:</div>
+    <div>0102673685</div>
+
+    <div class="label">Established:</div>
+    <div>March 7, 2008</div>
+
+    <div class="label">Registered office:</div>
+    <div>
+      No. 8/16, Alley 78, Giai Phong Street,
+      Phuong Mai Ward, Dong Da District,
+      Hanoi, Vietnam
+    </div>
+
+    <div class="label">Country:</div>
+    <div>Vietnam</div>
+
+  </div>
+</section>
+
+
+<section id="services">
+  <h2>Business Activities</h2>
+
+  <p>
+    The company operates in architecture, business development,
+    commercial activities and the development and application of
+    technology solutions.
+  </p>
+
+  <p>
+    Our activities include supporting enterprises with digital workflows,
+    customer engagement, information management, multimedia content
+    management and technology-enabled business solutions.
+  </p>
+</section>
+
+
+<section id="digital">
+  <h2>Digital Platforms & API Integration</h2>
+
+  <p>
+    URBAN ARC.,JSC develops internal digital systems to support business
+    operations, customer service and communication through authorized
+    digital platforms.
+  </p>
+
+  <p>
+    Where permitted by platform providers, our systems may integrate with
+    APIs to manage authorized company accounts, publish and manage content,
+    receive customer interactions, analyze operational data and assist
+    employees in responding to customer inquiries.
+  </p>
+
+  <div class="notice">
+    Any use of third-party APIs, including TikTok APIs, is subject to
+    authorization, platform policies, approved permissions and applicable
+    privacy requirements.
+  </div>
+
+  <div id="callback" class="callback-box">
+    <h3>TikTok Authorization</h3>
+    <p id="result">Processing authorization response...</p>
+  </div>
+</section>
+
+
+<section id="privacy">
+  <h2>Privacy Policy</h2>
+
+  <p>
+    URBAN ARC.,JSC respects the privacy of users and business partners.
+  </p>
+
+  <p>
+    Information obtained through authorized digital platforms and APIs is
+    used only for legitimate business operations, customer service,
+    communication, system integration and functions authorized by users
+    and platform providers.
+  </p>
+
+  <p>
+    We do not sell personal information obtained through platform APIs.
+    Access to such information is restricted to authorized personnel
+    and systems.
+  </p>
+
+  <p>
+    Authentication credentials, access tokens and API secrets are protected
+    using appropriate technical and organizational controls.
+  </p>
+
+  <p>
+    Users may request information concerning their data or request deletion
+    where applicable by contacting the company through the contact details
+    provided on this website.
+  </p>
+</section>
+
+
+<section id="terms">
+  <h2>Terms of Service</h2>
+
+  <p>
+    This website provides information about URBAN ARC.,JSC and its digital
+    business activities.
+  </p>
+
+  <p>
+    Services and integrations with third-party platforms are subject to the
+    terms, policies and permissions established by those platform providers.
+  </p>
+
+  <p>
+    Users must not use our services for unlawful activities, unauthorized
+    access, abuse, spam or violations of third-party platform policies.
+  </p>
+</section>
+
+
+<section id="contact">
+  <h2>Contact</h2>
+
+  <p>
+    <strong>URBAN ARCHITECTURE JOINT STOCK COMPANY</strong>
+  </p>
+
+  <p>
+    Address: No. 8/16, Alley 78, Giai Phong Street,
+    Phuong Mai Ward, Dong Da District, Hanoi, Vietnam
+  </p>
+
+  <p>
+    Phone: +84 913 390 854
+  </p>
+
+  <p>
+    Email:
+    <a href="mailto:kientrucdothikt@gmail.com">
+      kientrucdothikt@gmail.com
+    </a>
+  </p>
+</section>
+
+
+<footer>
+  © 2026 URBAN ARC.,JSC – Urban Architecture Joint Stock Company.
+  All rights reserved.
+</footer>
+
+
+<script>
+  /*
+    TikTok OAuth callback support.
+
+    IMPORTANT:
+    This page only detects the authorization response.
+    Client secrets or access-token exchanges must NOT be performed
+    in browser-side JavaScript.
+  */
+
+  function getQueryParam(name) {
+    const params = new URLSearchParams(window.location.search);
+    return params.get(name);
+  }
+
+  const code = getQueryParam("code");
+  const state = getQueryParam("state");
+  const error = getQueryParam("error");
+  const errorDescription = getQueryParam("error_description");
+
+  const callbackBox = document.getElementById("callback");
+  const result = document.getElementById("result");
+
+  if (code) {
+    callbackBox.style.display = "block";
+
+    result.innerText =
+      "TikTok authorization was completed successfully. " +
+      "The authorization response has been received by the application.";
+
+  } else if (error) {
+    callbackBox.style.display = "block";
+
+    result.innerText =
+      "TikTok authorization was not completed." +
+      (errorDescription ? "\n" + errorDescription : "");
+  }
+</script>
+
 </body>
 </html>
